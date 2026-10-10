@@ -1,0 +1,1645 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Guinhawa Agri-Poultry Supply</title>
+
+    <!-- LOCAL BOOTSTRAP -->
+    <link rel="stylesheet"
+          href="bootstrap5/css/bootstrap.min.css">
+
+    <style>
+
+        :root {
+            --green: #315c3a;
+            --dark-green: #24482c;
+            --light-green: #e9f1e8;
+            --cream: #fffaf0;
+            --yellow: #e2b94b;
+            --brown: #76553b;
+            --text: #333333;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--cream);
+            color: var(--text);
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        section {
+            scroll-margin-top: 75px;
+        }
+
+
+        /* NAVBAR */
+
+        .navbar-custom {
+            background-color: var(--cream);
+            border-bottom: 1px solid #ddd3c3;
+        }
+
+        .navbar-brand {
+            color: var(--green) !important;
+            font-weight: 800;
+        }
+
+        .nav-link {
+            color: var(--text) !important;
+            font-weight: 500;
+        }
+
+        .nav-link:hover {
+            color: var(--green) !important;
+        }
+
+
+        /* BUTTON */
+
+        .btn-green {
+            background-color: var(--green);
+            color: white;
+            border: 2px solid var(--green);
+        }
+
+        .btn-green:hover {
+            background-color: var(--dark-green);
+            color: white;
+            border-color: var(--dark-green);
+        }
+
+        .btn-outline-green {
+            border: 2px solid var(--green);
+            color: var(--green);
+        }
+
+        .btn-outline-green:hover {
+            background-color: var(--green);
+            color: white;
+        }
+
+
+        /* HERO */
+
+        #home {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            background-color: var(--cream);
+        }
+
+        .hero-badge {
+            background-color: var(--light-green);
+            color: var(--green);
+            padding: 8px 15px;
+            border-radius: 30px;
+            font-weight: bold;
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 6vw, 5rem);
+            font-weight: 800;
+            line-height: 1.1;
+        }
+
+        .hero-title span {
+            color: var(--green);
+        }
+
+        .hero-text {
+            color: #666;
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+
+        .hero-box {
+            background-color: var(--light-green);
+            border-radius: 30px;
+            padding: 50px;
+            text-align: center;
+        }
+
+        .hero-box h2 {
+            color: var(--green);
+            font-weight: 800;
+        }
+
+
+        /* TITLES */
+
+        .section-title {
+            font-weight: 800;
+            color: var(--green);
+        }
+
+        .section-text {
+            color: #666;
+        }
+
+
+        /* ABOUT */
+
+        #about {
+            background-color: var(--light-green);
+        }
+
+        .about-card {
+            background-color: white;
+            border-radius: 20px;
+            border: none;
+        }
+
+        .about-icon {
+            font-size: 2.5rem;
+        }
+
+
+        /* PRODUCTS */
+
+        #products {
+            background-color: var(--cream);
+        }
+
+        .product-card {
+            border: none;
+            border-radius: 20px;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+
+        .product-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.10);
+        }
+
+        .product-icon {
+            height: 170px;
+            background-color: var(--light-green);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 5rem;
+        }
+
+        .product-type {
+            color: var(--green);
+            font-size: 0.85rem;
+            font-weight: bold;
+        }
+
+        .price {
+            color: var(--green);
+            font-weight: bold;
+        }
+
+
+        /* WHY */
+
+        #why {
+            background-color: var(--green);
+            color: white;
+        }
+
+        #why .section-title {
+            color: white;
+        }
+
+        .why-card {
+            background-color: rgba(255,255,255,0.10);
+            border-radius: 20px;
+            height: 100%;
+        }
+
+        .why-icon {
+            font-size: 2.5rem;
+        }
+
+
+        /* TESTIMONIAL */
+
+        #testimonials {
+            background-color: var(--light-green);
+        }
+
+        .testimonial-card {
+            background-color: white;
+            border-radius: 25px;
+            max-width: 800px;
+            margin: auto;
+            min-height: 280px;
+        }
+
+        .stars {
+            color: var(--yellow);
+            font-size: 1.4rem;
+        }
+
+        .testimonial-name {
+            color: var(--green);
+            font-weight: bold;
+        }
+
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            background-color: var(--green);
+            border-radius: 50%;
+            padding: 20px;
+        }
+
+
+        /* GALLERY */
+
+        #gallery {
+            background-color: var(--cream);
+        }
+
+        .gallery-box {
+            background-color: var(--light-green);
+            border-radius: 20px;
+            min-height: 200px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 4rem;
+            transition: 0.3s;
+        }
+
+        .gallery-box:hover {
+            transform: scale(1.03);
+        }
+
+
+        /* CONTACT */
+
+        #contact {
+            background-color: var(--light-green);
+        }
+
+        .contact-card {
+            background-color: white;
+            border-radius: 20px;
+        }
+
+        .contact-info {
+            background-color: var(--green);
+            color: white;
+            border-radius: 20px;
+        }
+
+        .form-control {
+            padding: 12px;
+            border-radius: 10px;
+        }
+
+        .form-control:focus {
+            border-color: var(--green);
+            box-shadow: 0 0 0 0.2rem rgba(49,92,58,0.15);
+        }
+
+
+        /* FOOTER */
+
+        footer {
+            background-color: var(--dark-green);
+            color: white;
+        }
+
+
+        /* DARK MODE */
+
+        body.dark-mode {
+            background-color: #202820;
+            color: white;
+        }
+
+        body.dark-mode #home,
+        body.dark-mode #products,
+        body.dark-mode #gallery {
+            background-color: #202820;
+        }
+
+        body.dark-mode #about,
+        body.dark-mode #testimonials,
+        body.dark-mode #contact {
+            background-color: #29352a;
+        }
+
+        body.dark-mode .navbar-custom {
+            background-color: #202820;
+        }
+
+        body.dark-mode .nav-link {
+            color: white !important;
+        }
+
+        body.dark-mode .hero-title {
+            color: white;
+        }
+
+        body.dark-mode .hero-text,
+        body.dark-mode .section-text {
+            color: #dddddd;
+        }
+
+        body.dark-mode .product-card,
+        body.dark-mode .about-card,
+        body.dark-mode .testimonial-card,
+        body.dark-mode .contact-card {
+            background-color: #354437;
+            color: white;
+        }
+
+
+        @media(max-width: 991px) {
+
+            #home {
+                text-align: center;
+                padding: 80px 0;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- =================================
+     NAVBAR
+================================= -->
+
+<nav class="navbar navbar-expand-lg navbar-custom sticky-top">
+
+    <div class="container py-2">
+
+        <a class="navbar-brand"
+           href="#home">
+
+            GUINHAWA AGRI-POULTRY
+
+        </a>
+
+
+        <button class="navbar-toggler"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#navbar">
+
+            <span class="navbar-toggler-icon"></span>
+
+        </button>
+
+
+        <div class="collapse navbar-collapse"
+             id="navbar">
+
+            <ul class="navbar-nav ms-auto align-items-lg-center">
+
+                <li class="nav-item">
+                    <a class="nav-link"
+                       href="#home">
+                        Home
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link"
+                       href="#about">
+                        About Us
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link"
+                       href="#products">
+                        Products
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link"
+                       href="#why">
+                        Why Choose Us
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link"
+                       href="#testimonials">
+                        Testimonials
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link"
+                       href="#gallery">
+                        Gallery
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link"
+                       href="#contact">
+                        Contact
+                    </a>
+                </li>
+
+
+                <li class="nav-item ms-lg-3">
+
+                    <button id="themeButton"
+                            class="btn btn-outline-green btn-sm">
+
+                        Dark Mode
+
+                    </button>
+
+                </li>
+
+            </ul>
+
+        </div>
+
+    </div>
+
+</nav>
+
+
+
+<!-- =================================
+     HOME
+================================= -->
+
+<header id="home">
+
+    <div class="container">
+
+        <div class="row align-items-center g-5">
+
+
+            <div class="col-lg-7">
+
+                <span class="hero-badge d-inline-block mb-4">
+
+                    Quality Agri-Poultry Supplies
+
+                </span>
+
+
+                <h1 class="hero-title mb-4">
+
+                    Your Trusted
+                    <span>Agri-Poultry Supply</span>
+                    in Guinhawa
+
+                </h1>
+
+
+                <p class="hero-text mb-4">
+
+                    Quality feeds, veterinary products,
+                    vitamins, equipment, and other supplies
+                    for poultry, livestock, and pets.
+
+                </p>
+
+
+                <div class="d-flex flex-wrap gap-3
+                            justify-content-center
+                            justify-content-lg-start">
+
+                    <a href="#products"
+                       class="btn btn-green btn-lg">
+
+                        Explore Products
+
+                    </a>
+
+                    <a href="#contact"
+                       class="btn btn-outline-green btn-lg">
+
+                        Contact Us
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="col-lg-5">
+
+                <div class="hero-box shadow-sm">
+
+                    <div class="display-1 mb-3">
+                        🐔
+                    </div>
+
+                    <h2>
+                        GUINHAWA
+                    </h2>
+
+                    <h4>
+                        AGRI-POULTRY SUPPLY
+                    </h4>
+
+                    <p class="mt-3 mb-0">
+
+                        Quality Products • Good Service
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</header>
+
+
+
+<!-- =================================
+     ABOUT US
+================================= -->
+
+<section id="about"
+         class="py-5">
+
+    <div class="container py-5">
+
+
+        <div class="text-center mb-5">
+
+            <h2 class="section-title display-6">
+
+                About Us
+
+            </h2>
+
+            <p class="section-text">
+
+                Helping local raisers and pet owners
+                access the supplies they need.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="row g-4">
+
+
+            <div class="col-md-4">
+
+                <div class="card about-card h-100 p-4 text-center shadow-sm">
+
+                    <div class="about-icon">
+                        🌱
+                    </div>
+
+                    <div class="card-body">
+
+                        <h4 class="section-title">
+                            Our Mission
+                        </h4>
+
+                        <p>
+
+                            To provide quality products and good
+                            service while helping local raisers and
+                            pet owners access the supplies they need.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="col-md-4">
+
+                <div class="card about-card h-100 p-4 text-center shadow-sm">
+
+                    <div class="about-icon">
+                        👁️
+                    </div>
+
+                    <div class="card-body">
+
+                        <h4 class="section-title">
+                            Our Vision
+                        </h4>
+
+                        <p>
+
+                            To become a trusted and reliable
+                            agri-poultry supply provider
+                            in the community.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="col-md-4">
+
+                <div class="card about-card h-100 p-4 text-center shadow-sm">
+
+                    <div class="about-icon">
+                        📅
+                    </div>
+
+                    <div class="card-body">
+
+                        <h4 class="section-title">
+                            Established
+                        </h4>
+
+                        <p class="fs-5">
+
+                            June 8, 2026
+
+                        </p>
+
+                        <p>
+                            Brgy. Guinhawa, Tuy, Batangas
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =================================
+     PRODUCTS
+================================= -->
+
+<section id="products"
+         class="py-5">
+
+    <div class="container py-5">
+
+
+        <div class="text-center mb-5">
+
+            <h2 class="section-title display-6">
+
+                Our Products
+
+            </h2>
+
+            <p class="section-text">
+
+                Quality feeds for poultry and livestock.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="row g-4">
+
+
+            <!-- NRG -->
+
+            <div class="col-sm-12 col-md-6 col-lg-3">
+
+                <div class="card product-card h-100 shadow-sm">
+
+                    <div class="product-icon">
+                        🐔
+                    </div>
+
+                    <div class="card-body">
+
+                        <span class="product-type">
+                            FOR CHICKEN
+                        </span>
+
+                        <h3 class="mt-2">
+                            NRG
+                        </h3>
+
+                        <p>
+
+                            Quality poultry feed formulated
+                            to support chicken growth,
+                            health, and performance.
+
+                        </p>
+
+                        <p class="price">
+                            Starting at ₱35.00/kl
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- INTEGRA -->
+
+            <div class="col-sm-12 col-md-6 col-lg-3">
+
+                <div class="card product-card h-100 shadow-sm">
+
+                    <div class="product-icon">
+                        🐓
+                    </div>
+
+                    <div class="card-body">
+
+                        <span class="product-type">
+                            FOR CHICKEN
+                        </span>
+
+                        <h3 class="mt-2">
+                            Integra
+                        </h3>
+
+                        <p>
+
+                            Poultry feed designed to provide
+                            essential nutrients for healthy
+                            chicken production.
+
+                        </p>
+
+                        <p class="price">
+                            Starting at ₱38.00/kl
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- GMP -->
+
+            <div class="col-sm-12 col-md-6 col-lg-3">
+
+                <div class="card product-card h-100 shadow-sm">
+
+                    <div class="product-icon">
+                        🐣
+                    </div>
+
+                    <div class="card-body">
+
+                        <span class="product-type">
+                            FOR CHICKEN
+                        </span>
+
+                        <h3 class="mt-2">
+                            GMP
+                        </h3>
+
+                        <p>
+
+                            Feed made to support proper
+                            nutrition, growth, and overall
+                            chicken performance.
+
+                        </p>
+
+                        <p class="price">
+                            Starting at ₱36.00/kl
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- PILMICO -->
+
+            <div class="col-sm-12 col-md-6 col-lg-3">
+
+                <div class="card product-card h-100 shadow-sm">
+
+                    <div class="product-icon">
+                        🐖
+                    </div>
+
+                    <div class="card-body">
+
+                        <span class="product-type">
+                            FOR SWINE
+                        </span>
+
+                        <h3 class="mt-2">
+                            Pilmico
+                        </h3>
+
+                        <p>
+
+                            Quality feed for pigs formulated
+                            to provide proper nutrition and
+                            support healthy growth.
+
+                        </p>
+
+                        <p class="price">
+                            Starting at ₱38.00/kl
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+
+        <div class="text-center mt-5">
+
+            <strong>
+                Available Feed Brands:
+            </strong>
+
+            NRG • Integra • GMP • Pilmico
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =================================
+     WHY CHOOSE US
+================================= -->
+
+<section id="why"
+         class="py-5">
+
+    <div class="container py-5">
+
+
+        <div class="text-center mb-5">
+
+            <h2 class="section-title display-6">
+
+                Why Choose Us?
+
+            </h2>
+
+            <p>
+
+                Quality products and reliable service
+                for your animal care needs.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="row g-4">
+
+
+            <div class="col-sm-12 col-md-6 col-lg-3">
+
+                <div class="why-card p-4 text-center">
+
+                    <div class="why-icon mb-3">
+                        ⭐
+                    </div>
+
+                    <h4>
+                        Quality Products
+                    </h4>
+
+                    <p>
+
+                        Quality feeds, vitamins,
+                        veterinary products,
+                        and equipment.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="col-sm-12 col-md-6 col-lg-3">
+
+                <div class="why-card p-4 text-center">
+
+                    <div class="why-icon mb-3">
+                        🤝
+                    </div>
+
+                    <h4>
+                        Good Service
+                    </h4>
+
+                    <p>
+
+                        Friendly and reliable service
+                        for our customers.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="col-sm-12 col-md-6 col-lg-3">
+
+                <div class="why-card p-4 text-center">
+
+                    <div class="why-icon mb-3">
+                        📍
+                    </div>
+
+                    <h4>
+                        Convenient
+                    </h4>
+
+                    <p>
+
+                        Local raisers can get supplies
+                        without travelling far.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="col-sm-12 col-md-6 col-lg-3">
+
+                <div class="why-card p-4 text-center">
+
+                    <div class="why-icon mb-3">
+                        🐾
+                    </div>
+
+                    <h4>
+                        Different Animals
+                    </h4>
+
+                    <p>
+
+                        Supplies for poultry, pigs,
+                        goats, cattle, dogs, and cats.
+
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =================================
+     TESTIMONIALS
+================================= -->
+
+<section id="testimonials"
+         class="py-5">
+
+    <div class="container py-5">
+
+
+        <div class="text-center mb-5">
+
+            <h2 class="section-title display-6">
+
+                What Our Customers Say
+
+            </h2>
+
+        </div>
+
+
+
+        <div id="testimonialCarousel"
+             class="carousel slide"
+             data-bs-ride="carousel">
+
+            <div class="carousel-inner">
+
+
+                <div class="carousel-item active">
+
+                    <div class="testimonial-card
+                                shadow-sm
+                                text-center
+                                p-5">
+
+                        <div class="stars">
+                            ★★★★★
+                        </div>
+
+                        <p class="lead mt-3">
+
+                            "Maganda ang quality ng feeds
+                            at maayos kausap. Madali rin bumili
+                            dahil malapit lang sa amin."
+
+                        </p>
+
+                        <h5 class="testimonial-name">
+                            Juan D.
+                        </h5>
+
+                        <p>
+                            Local Poultry Raiser
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="carousel-item">
+
+                    <div class="testimonial-card
+                                shadow-sm
+                                text-center
+                                p-5">
+
+                        <div class="stars">
+                            ★★★★
+                        </div>
+
+                        <p class="lead mt-3">
+
+                            "Complete ang mga kailangan namin
+                            para sa manok. Friendly din ang
+                            service at mabilis kausap."
+
+                        </p>
+
+                        <h5 class="testimonial-name">
+                            Maria S.
+                        </h5>
+
+                        <p>
+                            Local Customer
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="carousel-item">
+
+                    <div class="testimonial-card
+                                shadow-sm
+                                text-center
+                                p-5">
+
+                        <div class="stars">
+                            ★★★★★
+                        </div>
+
+                        <p class="lead mt-3">
+
+                            "Convenient bumili dito at marami
+                            silang available na feeds at
+                            poultry supplies."
+
+                        </p>
+
+                        <h5 class="testimonial-name">
+                            Pedro R.
+                        </h5>
+
+                        <p>
+                            Poultry Raiser
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+
+            <button class="carousel-control-prev"
+                    type="button"
+                    data-bs-target="#testimonialCarousel"
+                    data-bs-slide="prev">
+
+                <span class="carousel-control-prev-icon">
+                </span>
+
+            </button>
+
+
+
+            <button class="carousel-control-next"
+                    type="button"
+                    data-bs-target="#testimonialCarousel"
+                    data-bs-slide="next">
+
+                <span class="carousel-control-next-icon">
+                </span>
+
+            </button>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =================================
+     GALLERY
+================================= -->
+
+<section id="gallery"
+         class="py-5">
+
+    <div class="container py-5">
+
+
+        <div class="text-center mb-5">
+
+            <h2 class="section-title display-6">
+                Our Store
+            </h2>
+
+            <p class="section-text">
+
+                A look at our store, feeds,
+                and available supplies.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="row g-4">
+
+
+            <div class="col-md-4">
+
+                <div class="gallery-box shadow-sm">
+                    🏪
+                </div>
+
+            </div>
+
+
+            <div class="col-md-4">
+
+                <div class="gallery-box shadow-sm">
+                    🌾
+                </div>
+
+            </div>
+
+
+            <div class="col-md-4">
+
+                <div class="gallery-box shadow-sm">
+                    🐔
+                </div>
+
+            </div>
+
+
+            <div class="col-md-4">
+
+                <div class="gallery-box shadow-sm">
+                    🐕
+                </div>
+
+            </div>
+
+
+            <div class="col-md-4">
+
+                <div class="gallery-box shadow-sm">
+                    🐖
+                </div>
+
+            </div>
+
+
+            <div class="col-md-4">
+
+                <div class="gallery-box shadow-sm">
+                    🛍️
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =================================
+     CONTACT
+================================= -->
+
+<section id="contact"
+         class="py-5">
+
+    <div class="container py-5">
+
+
+        <div class="text-center mb-5">
+
+            <h2 class="section-title display-6">
+                Contact Us
+            </h2>
+
+            <p class="section-text">
+
+                Have questions about our products?
+                Send us a message.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="row g-4">
+
+
+            <!-- CONTACT INFO -->
+
+            <div class="col-lg-5">
+
+                <div class="contact-info
+                            h-100
+                            p-4 p-md-5">
+
+                    <h3 class="mb-4">
+                        Store Information
+                    </h3>
+
+                    <p>
+                        📍 <strong>Location</strong>
+                    </p>
+
+                    <p>
+                        Brgy. Guinhawa, Tuy, Batangas
+                    </p>
+
+                    <hr>
+
+
+                    <p>
+                        📱 <strong>Phone</strong>
+                    </p>
+
+                    <p>
+                        0945-463-3538
+                    </p>
+
+                    <hr>
+
+
+                    <p>
+                        🕒 <strong>Store Hours</strong>
+                    </p>
+
+                    <p>
+                        Monday – Saturday<br>
+                        6:00 AM – 6:30 PM
+                    </p>
+
+                    <p>
+                        Sunday<br>
+                        6:00 AM – 5:00 PM
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- CONTACT FORM -->
+
+            <div class="col-lg-7">
+
+                <div class="contact-card
+                            shadow-sm
+                            p-4 p-md-5">
+
+                    <form id="contactForm">
+
+
+                        <div class="mb-3">
+
+                            <label for="name"
+                                   class="form-label">
+
+                                Full Name
+
+                            </label>
+
+                            <input type="text"
+                                   class="form-control"
+                                   id="name"
+                                   name="name"
+                                   required>
+
+                        </div>
+
+
+
+                        <div class="mb-3">
+
+                            <label for="email"
+                                   class="form-label">
+
+                                Email Address
+
+                            </label>
+
+                            <input type="email"
+                                   class="form-control"
+                                   id="email"
+                                   name="email"
+                                   required>
+
+                        </div>
+
+
+
+                        <div class="mb-3">
+
+                            <label for="subject"
+                                   class="form-label">
+
+                                Subject
+
+                            </label>
+
+                            <input type="text"
+                                   class="form-control"
+                                   id="subject"
+                                   name="subject"
+                                   required>
+
+                        </div>
+
+
+
+                        <div class="mb-4">
+
+                            <label for="message"
+                                   class="form-label">
+
+                                Message
+
+                            </label>
+
+                            <textarea class="form-control"
+                                      id="message"
+                                      name="message"
+                                      rows="5"
+                                      required></textarea>
+
+                        </div>
+
+
+
+                        <button type="submit"
+                                class="btn btn-green w-100">
+
+                            Send Message
+
+                        </button>
+
+
+                    </form>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =================================
+     FOOTER
+================================= -->
+
+<footer class="py-5">
+
+    <div class="container">
+
+
+        <div class="row">
+
+
+            <div class="col-md-7">
+
+                <h4 class="fw-bold">
+
+                    GUINHAWA AGRI-POULTRY SUPPLY
+
+                </h4>
+
+                <p>
+
+                    Quality Products. Good Service.
+                    Helping Local Raisers Grow.
+
+                </p>
+
+            </div>
+
+
+
+            <div class="col-md-5
+                        text-md-end">
+
+                <p>
+                    Brgy. Guinhawa, Tuy, Batangas
+                </p>
+
+                <p>
+                    0945-463-3538
+                </p>
+
+            </div>
+
+
+        </div>
+
+
+        <hr>
+
+
+        <p class="text-center mb-0">
+
+            © 2026 GUINHAWA AGRI-POULTRY SUPPLY.
+            All Rights Reserved.
+
+        </p>
+
+
+    </div>
+
+</footer>
+
+
+
+<!-- LOCAL BOOTSTRAP JS -->
+
+<script src="bootstrap5/js/bootstrap.bundle.min.js"></script>
+
+
+<!-- CUSTOM JAVASCRIPT -->
+
+<script>
+
+    // DARK MODE
+
+    const themeButton =
+        document.getElementById("themeButton");
+
+
+    themeButton.addEventListener(
+        "click",
+        function () {
+
+            document.body.classList.toggle("dark-mode");
+
+
+            if (
+                document.body.classList.contains("dark-mode")
+            ) {
+
+                themeButton.textContent = "Light Mode";
+
+            }
+
+            else {
+
+                themeButton.textContent = "Dark Mode";
+
+            }
+
+        }
+    );
+
+
+
+    // CONTACT FORM
+
+    const contactForm =
+        document.getElementById("contactForm");
+
+
+    contactForm.addEventListener(
+        "submit",
+        function(event) {
+
+            event.preventDefault();
+
+
+            alert(
+                "Thank you! Your message has been submitted."
+            );
+
+
+            contactForm.reset();
+
+        }
+    );
+
+</script>
+
+
+</body>
+
+</html>
